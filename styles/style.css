@@ -1,77 +1,90 @@
 /* место для вашего кода */
 /* шапка страницы*/
-.container{
-    max-width: 1340px;
+.content-container {
+    width: 100%;
     margin: 0 auto;
+}
 
-}
-.header{
-    padding: 92px 50px 96px;
-}
-.header__navigation{
-    display: flex;
-    justify-content: space-between;
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    flex-wrap: wrap;
+    padding: 85px 50px 92px;
 }
+
 /* логотип */
-.header__menu{
-    display: flex;
-    align-items: center;
+
+.header__logo_section {
+    justify-self: center;
+    align-self: center;
+    width: 148px;
 }
-.header__logo_section{
-    width:148px;
-    margin-left: 209px;
-}
-.header__logo{
+
+.header__logo {
     width: inherit;
     height: inherit;
 }
-/* навигация*/
-.header__nav{
-    display:flex;
-    width: 388px;
 
+/* навигация*/
+
+.header__nav_links {
+    display: flex;
+    gap: 32px;
 }
-.header__nav_links{
-    display:flex;
-    gap:32px;
-}
-.header__nav_link-item{
+
+.header__nav_link-item {
     border-bottom: #000;
     list-style: circle;
 }
-.header__nav_link-item_no-bullit{
-    list-style:none;
+
+.header__nav_link-item_no-bullit {
+    list-style: none;
 }
 
-.header__nav_link-active{
-    text-decoration:none;
+.header__nav_link-active {
+    text-decoration: none;
 }
-.header__nav_link{
+
+.header__nav_link {
     text-underline-position: under;
 }
 
-.header__contacts{
-    width: 240px;
+.address {
+    justify-self: end;
+}
+
+.header__contacts {
+    max-width: 240px;
     list-style: none;
     text-underline-position: under;
 }
+
+
 /* блок с картинкой*/
-.cover{
+.cover {
+    position: relative;
     color: white;
     background: url(../images/cover.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.overlay{
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 165px 50px 50px 50px;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: #000000;
+}
+
 /* header title*/
-.cover__title{
+.cover__title {
+    position: relative;
     font-size: 100px;
     font-weight: 700;
     letter-spacing: 0.3em;
@@ -79,28 +92,36 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 1;
 
 }
-.aligned-text_left{
-    text-align:left;
+
+.aligned-text_left {
+    text-align: left;
 }
-.aligned-text_center{
-    text-align:center;
+
+.aligned-text_center {
+    text-align: center;
 }
-.aligned-text_right{
+
+.aligned-text_right {
     text-align: right;
 }
-.letter-spacing-extended{
-    letter-spacing: 0.6em;
+
+.letter-spacing-extended {
+    letter-spacing: 60px;
 }
 
-.cover__bunner{
+.cover__bunner {
+    position: relative;
     margin-top: 120px;
     display: flex;
     justify-content: end;
     align-items: center;
+    z-index: 1;
 }
-.cover__bunner_text{
+
+.cover__bunner_text {
     font-size: 22px;
     font-weight: 400;
     line-height: 28px;
@@ -109,55 +130,77 @@
     text-transform: uppercase;
     margin-right: 78px;
 }
-.cover__bunner_button{
+
+.cover__bunner_button {
     font-size: 22px;
     font-weight: 400;
     text-transform: uppercase;
     background: none;
-    border: 1px solid #fff;
+    border: 1px solid currentColor;
     border-radius: 0;
     color: #fff;
     padding: 12px 32px;
 }
-.lots__card-list{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 25px;
+
+
+
+.lots__card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    list-style: none;
     margin-bottom: 30px;
 }
-/* .card{
+
+.card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 430px;
-    height: 450px;
-    background-color: blue;
+    gap: 30px;
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 50px 40px;
-} */
-.lots{
-    margin-top: 180px;
 }
-.lots__heading{
-    margin-bottom: 27px;
-    margin-left: 40px;
+
+.card-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.lots {
+    padding: 180px 50px 0 50px;
+}
+
+.lots__heading {
+    padding: 0 0 30px 40px;
     font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
 }
-.card_type_film{
-    background: url(../images/card-lot-01.jpg) no-repeat;
-    background-size: cover;
+
+.lots__card-list-item {
+    height: 100%;
 }
-.card_type_book{
-    background: url(../images/card-lot-02.jpg) no-repeat;
-    background-size: cover;
+
+.card_type_film {
+    background-image: url(../images/card-lot-01.jpg);
 }
-.card_type_picture{
-    background: url(../images/card-lot-03.jpg) no-repeat;
-    background-size: cover;
+
+.card_type_book {
+    background-image: url(../images/card-lot-02.jpg);
 }
-.card__title{
+
+.card_type_picture {
+    background-image: url(../images/card-lot-03.jpg);
+}
+
+.card__title {
+    position: relative;
+    z-index: 1;
     font-size: 22px;
     font-weight: 700;
     color: #fff;
@@ -165,90 +208,133 @@
     text-decoration: underline;
     text-underline-position: under;
 }
-.card__text{
+
+.card__text {
+    position: relative;
+    z-index: 1;
     font-size: 20px;
     font-weight: 400;
     color: white;
 }
-.overla{
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 430px;
-    height: 450px;
-    padding: 50px 40px;
+
+.lots__look-more-link {
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 400;
+    text-underline-position: under;
+    padding-left: 40px;
 }
-.lots__look-more-link{
-   text-decoration: underline;
-   font-size: 20px;
-   font-weight: 400;
-   text-underline-position: under;
-}
+
 
 /* секция об аукционе*/
 .about {
     display: flex;
     gap: 25px;
     padding: 181px 50px 182px 50px;
-  }
-  .about__column:last-child {
-    margin-top: 103px;
-  }
+}
 
-  .about__logo {
+.about__column:last-child {
+    margin-top: 103px;
+}
+
+.about__logo {
     background-color: #000;
     border-radius: 50%;
     margin: 0 95px;
     padding: 63px 46px;
-  }
+}
 
-  .about__logo-image {
+.about__logo-image {
     width: 148px;
-  }
+}
 
-  .about__title {
+.about__title {
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 700;
-  }
+}
 
-  .about__text {
+.about__text {
     display: flex;
     flex-direction: column;
     gap: 25px;
     margin-top: 100px;
     font-size: 20px;
     font-weight: 400;
-  }
+}
 
 
-  .footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto 90px auto;
-    width: 1340px;
-  }
-  .footer__social-list{
-    display: flex;
-  }
-  .footer__social-icon{
-    width: 48px;
-  }
-  .footer__container{
-    display: flex;
-    align-items: flex-start;
-  }
-  .footer__menu{
-    margin-left: 356px;
-  }
-  .footer__social-list{
-    gap: 48px;
-  }
-  .footer__menu-link_active{
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    padding: 0 50px 90px 50px;
+}
+
+.footer__address {
+    justify-self: start;
+    max-width: 240px;
+}
+
+.footer__address-link {
+    text-underline-offset: 5px;
+    transition: text-underline-offset 0.3s ease;
+}
+
+.footer__address-link:hover {
+    text-underline-offset: 7px;
+}
+
+.footer__menu-list {
+    text-align: center;
+    list-style: none;
+}
+
+.footer__menu-link {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: normal;
+    text-underline-offset: 2px;
+    transition: text-underline-offset 0.3s ease;
+}
+
+.footer__menu-link:hover {
+    text-underline-offset: 4px;
+}
+
+.footer__menu-link_active {
     text-decoration: none;
-  }
-  .footer__menu-link{
-    text-underline-position: under;
-  }
+}
+
+.footer__social-link {
+    display: block;
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.footer__social-link:hover {
+    transform: translateY(-3px);
+}
+
+.footer__social-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: end;
+    align-items: center;
+    gap: 20px 48px;
+    max-width: 240px;
+    list-style: none;
+}
+
+.footer__social-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.contacts {
+    font-size: 18px;
+    font-family: Raleway;
+    font-weight: 400;
+    line-height: 24.3px;
+}
