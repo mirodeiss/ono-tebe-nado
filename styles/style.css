@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    padding: 85px 50px 92px;
+    padding: 95px 50px 92px;
 }
 
 /* логотип */
@@ -17,7 +17,7 @@
 .header__logo_section {
     justify-self: center;
     align-self: center;
-    width: 148px;
+    width: 130px;
 }
 
 .header__logo {
@@ -35,10 +35,15 @@
 .header__nav_link-item {
     border-bottom: #000;
     list-style: circle;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .header__nav_link-item_no-bullit {
     list-style: none;
+
 }
 
 .header__nav_link-active {
@@ -51,6 +56,7 @@
 
 .address {
     justify-self: end;
+    font-style: normal;
 }
 
 .header__contacts {
@@ -91,13 +97,19 @@
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     z-index: 1;
 
 }
 
+.aligned-text {
+    line-height: 100%;
+}
+
 .aligned-text_left {
     text-align: left;
+    line-height: 115%;
+
 }
 
 .aligned-text_center {
@@ -111,7 +123,9 @@
 .letter-spacing-extended {
     letter-spacing: 60px;
 }
-
+.no-letter-spacing{
+    line-height: normal;
+}
 .cover__bunner {
     position: relative;
     margin-top: 120px;
@@ -143,13 +157,16 @@
 }
 
 
-
+/* Неплохое решение — задать пункту списка flex-grow: 1. 
+Так при переносе на новую строку карточка начнет 
+подстраиваться под ширину контейнера. -- не плохое решение не значит обязательно */
 .lots__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 25px;
     list-style: none;
     margin-bottom: 30px;
+    /* не плохое решение не значит обязательно */
 }
 
 .card {
@@ -172,7 +189,7 @@
 }
 
 .lots {
-    padding: 180px 50px 0 50px;
+    padding: 185px 50px 0 50px;
 }
 
 .lots__heading {
