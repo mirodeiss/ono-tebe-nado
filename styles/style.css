@@ -125,6 +125,8 @@
 }
 .no-letter-spacing{
     line-height: normal;
+    letter-spacing: initial;
+    
 }
 .cover__bunner {
     position: relative;
@@ -157,9 +159,7 @@
 }
 
 
-/* Неплохое решение — задать пункту списка flex-grow: 1. 
-Так при переносе на новую строку карточка начнет 
-подстраиваться под ширину контейнера. -- не плохое решение не значит обязательно */
+
 .lots__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -240,6 +240,7 @@
     font-weight: 400;
     text-underline-position: under;
     padding-left: 40px;
+    text-transform: lowercase;
 }
 
 
@@ -351,7 +352,7 @@
 
 .contacts {
     font-size: 18px;
-    font-family: Raleway;
+    font-family: Raleway, Arial, sans-serif;
     font-weight: 400;
     line-height: 24.3px;
 }
